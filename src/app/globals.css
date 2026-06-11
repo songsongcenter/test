@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  /* 삼천리 브랜드 컬러 — PANTONE 3005C & 422C */
+  --color-brand-blue: #056AA6;
+  --color-brand-blue-dark: #044d7a;
+  --color-brand-blue-light: #e6f2fa;
+  --color-brand-gray: #A8A8A8;
+  --color-brand-gray-light: #f4f4f4;
+  --color-brand-gray-dark: #5a5a5a;
+  --color-brand-near-black: #1a1a1a;
+
+  /* 한국어 폰트 스택 — next/font가 --font-noto 변수를 주입 */
+  --font-sans: var(--font-noto), "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+
+  /* 카드 그림자 */
+  --shadow-card: 0 2px 8px rgba(5, 106, 166, 0.08);
+  --shadow-card-hover: 0 4px 16px rgba(5, 106, 166, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: white;
+  color: var(--color-brand-near-black);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 다크모드 비활성화 — 사내 사이트는 항상 라이트 모드 */
