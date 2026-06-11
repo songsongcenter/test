@@ -1,7 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-export async function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
   const supabase = createServerClient(
@@ -26,7 +26,7 @@ export async function middleware(request: NextRequest) {
   )
 
   // 세션을 갱신하고 최신 상태를 유지한다
-  await supabase.auth.getUser()
+  supabase.auth.getUser()
 
   return supabaseResponse
 }
